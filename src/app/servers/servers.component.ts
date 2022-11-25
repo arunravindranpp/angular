@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class ServersComponent {
 serverId: number =10;
 serverStatus:string='Offline';
+allowNewServer =false;
+constructor(){
+  setTimeout(() => {
+    this.allowNewServer=true;
+  }, 6000);
 }
+}
+
