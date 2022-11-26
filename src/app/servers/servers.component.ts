@@ -11,6 +11,7 @@ serverStatus:string='Offline';
 allowNewServer =false;
 serverCreationStatus="No Server Created";
 serverName="";
+serverName2Way="Test Server";
 constructor(){
   setTimeout(() => {
     this.allowNewServer=true;
@@ -26,5 +27,6 @@ onUpdateServer(event:any)
   console.log(event);
   this.serverName=(<HTMLInputElement>event.target).value;
 }
+
 }
 
