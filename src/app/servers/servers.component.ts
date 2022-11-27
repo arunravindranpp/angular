@@ -12,6 +12,7 @@ allowNewServer =false;
 serverCreationStatus="No Server Created";
 serverName="";
 serverName2Way="Test Server";
+serverCreated=false;
 constructor(){
   setTimeout(() => {
     this.allowNewServer=true;
@@ -21,6 +22,8 @@ constructor(){
 onCreateServer()
 {
   this.serverCreationStatus="Server Created";
+  console.log(this.serverCreationStatus);
+  this.serverCreated=true;
 }
 onUpdateServer(event:any)
 {

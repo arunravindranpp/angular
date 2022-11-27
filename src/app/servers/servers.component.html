@@ -1,11 +1,13 @@
 <app-server></app-server>
-<button class="btn btn-primary" [disabled]="!allowNewServer" ((click))="onCreateServer()">Add Server</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <br>
 {{allowNewServer}}
 <p>{{'Server'}} with ID {{serverId}} is {{serverStatus}} </p>
 
-<p>{{serverCreationStatus}}</p>
-
+<p *ngIf="serverCreated; else noserver" style="background-color: mistyrose">{{serverCreationStatus}}</p>
+<ng-template #noserver>
+<p> No Server Created!!</p>  
+</ng-template>
 <label> Server Name</label>
 <input type="text" class="form-control" (input)="onUpdateServer($event)">
 <p> {{serverName}}</p>
