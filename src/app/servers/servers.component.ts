@@ -14,6 +14,7 @@ serverName="";
 serverName2Way="Test Server";
 serverCreated=false;
 constructor(){
+  this.serverStatus= Math.random() > .5  ? "Online" : "Offline"
   setTimeout(() => {
     this.allowNewServer=true;
   }, 3000);
@@ -30,6 +31,8 @@ onUpdateServer(event:any)
   console.log(event);
   this.serverName=(<HTMLInputElement>event.target).value;
 }
-
+getColor(){
+  return this.serverStatus==="Online" ? "green" : "red";
+}
 }
 
