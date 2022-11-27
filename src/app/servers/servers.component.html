@@ -2,7 +2,9 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <br>
 {{allowNewServer}}
-<p [ngStyle]="{'background-color':getColor()} ">{{'Server'}} with ID {{serverId}} is {{serverStatus}} </p>
+<p [ngStyle]="{'background-color':getColor()} "
+[ngClass]="{'online':serverStatus==='Online'}"
+>{{'Server'}} with ID {{serverId}} is {{serverStatus}} </p>
 
 <p *ngIf="serverCreated; else noserver" style="background-color: mistyrose">{{serverCreationStatus}}</p>
 <ng-template #noserver>
